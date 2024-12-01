@@ -1,7 +1,7 @@
 # Xanmod-Kernel-Builder
 A script to build a fully optimized Xanmod kernel using LLVM compiler instead of the traditional GCC.
 
-##Building dependencies
+## Building dependencies
 It is recommended using LLVM_installer.sh or Intel_OneAPI_installer.sh since it will install and configure the last version of both GCC and LLVM.
 Although it is not listed below, installing Lz4 is also required. Preferable 1.10 version or above to take benefit of multithreading support.
 
