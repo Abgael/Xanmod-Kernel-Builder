@@ -14,8 +14,11 @@ cp /boot/config-$(uname -r) .config
 # Overrides some kernel configurations
 source ../intel_kernel_settings.sh
 
+#Build modules
+make modules
+
 # Avoids WARNING: Module.symvers is missing.
-cp /usr/src/linux-headers-$(uname -r)/Module.symvers . || true
+#cp /usr/src/linux-headers-$(uname -r)/Module.symvers . || true
 
 # Points LSMOD variable to the modprobed-db database
 make LSMOD=$HOME/.config/modprobed.db localmodconfig
