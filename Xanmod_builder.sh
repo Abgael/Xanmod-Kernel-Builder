@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Downloads source code
-git clone --branch 6.6 https://gitlab.com/xanmod/linux.git
+git clone --depth 1 --branch 6.11 https://gitlab.com/xanmod/linux.git
 cd linux
 
 # Cleans previous builds
