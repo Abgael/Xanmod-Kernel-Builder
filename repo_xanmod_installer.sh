@@ -10,7 +10,7 @@ echo 'deb [signed-by=/usr/share/keyrings/xanmod-archive-keyring.gpg] http://deb.
 wget https://dl.xanmod.org/check_x86-64_psabi.sh
 chmod +x "$(basename "https://dl.xanmod.org/check_x86-64_psabi.sh")"
 
-# Then update and install:
+# Choose wich version
 read -p "Type 1 for Long-Term Support or 2 for Main: " choice
 if  	[[ $choice == 1 ]]; then
 	package="lts-x64v"
@@ -21,6 +21,7 @@ echo "Invalid choice"
 	exit 1
 fi
 
+# Then update and install:
 sudo apt update && sudo apt install linux-xanmod-"$package"$(./check_x86-64_psabi.sh | tail -c 2)
 
 #Delete check script
