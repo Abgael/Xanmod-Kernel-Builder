@@ -7,7 +7,7 @@ wget -O modprobed-db.zip https://github.com/graysky2/modprobed-db/archive/refs/h
 unzip modprobed-db.zip && rm -r "$(basename modprobed-db.zip)"
 cd modprobed-db*
 make -j$(nproc)
-sudo make -j$(nproc) install
+sudo make install
 
 #
 rm -r modprobed-db-master
