@@ -22,13 +22,13 @@ echo "Invalid choice"
 fi
 
 # Then update and install:
-sudo apt update && sudo apt install linux-xanmod-"$package"$(./check_x86-64_psabi.sh | tail -c 2)
-
+XAN_VER=$(./check_x86-64_psabi.sh | tail -c 2)
+sudo apt update && sudo apt install linux-xanmod-"$package""$XAN_VER"
 #Delete check script
 rm check_x86-64_psabi.sh
 
 #Check it
 cat /proc/version
 
-echo “Restart is required for changes to take effect.”
+echo “Please restart your system so the changes may take effect.”
 
