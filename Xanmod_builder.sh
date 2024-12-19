@@ -15,7 +15,7 @@ cp /boot/config-$(uname -r) .config
 source ../intel_kernel_settings.sh
 
 #Build modules
-make modules
+#make modules
 
 # Avoids WARNING: Module.symvers is missing.
 #cp /usr/src/linux-headers-$(uname -r)/Module.symvers . || true
