@@ -41,4 +41,5 @@ done
 # Installs and cleans folder
 sudo dpkg -i linux-image-*xanmod*.deb linux-headers-*xanmod*.deb
 cd .. && rm -R xanmod_packages
-cat /proc/version
+
+echo “Please restart your system so the changes may take effect.”
