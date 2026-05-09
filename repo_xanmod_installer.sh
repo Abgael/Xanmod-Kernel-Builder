@@ -24,11 +24,8 @@ fi
 # Then update and install:
 XAN_VER=$(./check_x86-64_psabi.sh | tail -c 2)
 sudo apt update && sudo apt install linux-xanmod-"$package""$XAN_VER"
+
 #Delete check script
 rm check_x86-64_psabi.sh
 
-#Check it
-cat /proc/version
-
 echo “Please restart your system so the changes may take effect.”
-
