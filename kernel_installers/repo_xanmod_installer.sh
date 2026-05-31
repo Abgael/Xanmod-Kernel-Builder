@@ -13,17 +13,17 @@ chmod +x "$(basename "https://dl.xanmod.org/check_x86-64_psabi.sh")"
 # Choose wich version
 read -p "Type 1 for Long-Term Support or 2 for Main: " choice
 if  	[[ $choice == 1 ]]; then
-	package="lts-x64v"
+	BRANCH="lts-x64v"
 elif	[[ $choice == 2 ]]; then
-	package="x64v"
+	BRANCH="x64v"
 else
 echo "Invalid choice"
 	exit 1
 fi
 
 # Then update and install:
-XAN_VER=$(./check_x86-64_psabi.sh | tail -c 2)
-sudo apt update && sudo apt install linux-xanmod-"$package""$XAN_VER"
+PSABI_LV=$(./check_x86-64_psabi.sh | tail -c 2)
+sudo apt update && sudo apt install linux-xanmod-"$BRANCH""$PSABI_LV"
 
 #Delete check script
 rm check_x86-64_psabi.sh
