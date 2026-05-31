@@ -39,7 +39,7 @@ done
 #Ref.:https://stackoverflow.com/questions/39668291/download-whole-folder-from-sourceforge
 
 # Installs and cleans folder
-sudo dpkg -i linux-image-*xanmod*.deb linux-headers-*xanmod*.deb
+sudo dpkg -i linux-image-*xanmod*.deb linux-headers-*xanmod*.deb linux-libc-dev-*xanmod*.deb
 cd .. && rm -R xanmod_packages
 
 echo “Please restart your system so the changes may take effect.”
