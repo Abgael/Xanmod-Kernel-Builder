@@ -21,7 +21,7 @@ scripts/config --set-val CONFIG_GENERIC_CPU n
 scripts/config --set-val CONFIG_MNATIVE_INTEL y
 
 #
-scripts/config --set-val CONFIG_DEBUG_INFO 1
+scripts/config --set-val CONFIG_DEBUG_INFO n
 scripts/config --set-val CONFIG_DEBUG_INFO_NONE y
 scripts/config --set-val CONFIG_DEBUG_KERNEL n
 scripts/config --set-val CONFIG_DEBUG_FS n
@@ -48,7 +48,8 @@ scripts/config --set-val CONFIG_MODULE_COMPRESS y
 scripts/config --set-val CONFIG_MODULE_COMPRESS_LZ4 y
 
 # Enable 32-bit Library Support
-scripts/config --set-val CONFIG_IA32_EMULATION y
+scripts/config --set-val CONFIG_IA32_EMULATION n
+scripts/config --set-val CONFIG_X86_X32_ABI y
 scripts/config --set-val CONFIG_COMPAT y
 scripts/config --set-val CONFIG_COMPAT_32BIT_TIME y
 
