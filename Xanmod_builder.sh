@@ -25,23 +25,13 @@ make LSMOD=$HOME/.config/modprobed.db localmodconfig
 
 # Builds the kernel
 # Ref.:https://www.kernel.org/doc/html/v6.6/kbuild/llvm.html
-make -j$(nproc) \
-CC=clang \
-LD=ld.lld \
-AR=llvm-ar \
-NM=llvm-nm \
-STRIP=llvm-strip \
-OBJCOPY=llvm-objcopy \
-OBJDUMP=llvm-objdump \
-READELF=llvm-readelf \
-HOSTCC=clang \
-HOSTCXX=clang++ \
-HOSTAR=llvm-ar \
-HOSTLD=ld.lld \
-#KCFLAGS="-O3 -flto -static -ffast-math" \
-#HOSTCFLAGS="-O3 -flto -static -ffast-math" \
-LDFLAGS="-fuse-ld=lld"
-#Flags above are alternetives to -fast flag Ref.:https://www.intel.com/content/www/us/en/docs/dpcpp-cpp-compiler/developer-guide-reference/2025-0/fast.html
+make LLVM=1 \
+KCFLAGS="-qopt-streaming-stores=auto, -ipo, -O3, -static, -fp-model=fast" \
+USERCFLAGS="-qopt-streaming-stores=auto, -ipo, -O3, -static, -fp-model=fast" \
+-j$(nproc)
+#Flags above are alternetives to -fast flag
+#Ref.:https://doku.lrz.de/comparison-of-compiler-options-intel-vs-pgi-vs-gcc-11481685.html#ComparisonofCompilerOptions(intelvs.pgivs.gcc)-CompilerDirectivesfortheIntelcompiler
+#Ref.:https://www.intel.com/content/www/us/en/docs/dpcpp-cpp-compiler/developer-guide-reference/2025-2/fast.html
 
 # Kernel modules install
 sudo make modules_install
