@@ -2,7 +2,7 @@
 
 # Downloads source code
 RELEASE=$(uname -r | cut -d. -f1-2)
-git clone --depth 1 --branch $RELEASE https://gitlab.com/xanmod/linux.git
+git clone --depth 1 --single-branch --branch $RELEASE https://gitlab.com/xanmod/linux.git
 cd linux
 
 # Cleans previous builds
