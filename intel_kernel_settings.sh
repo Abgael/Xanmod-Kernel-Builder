@@ -6,9 +6,7 @@ scripts/config --set-val CONFIG_CC_IS_CLANG y
 scripts/config --set-val CONFIG_CC_IS_GCC n
 
 #
-scripts/config --set-val CONFIG_HAS_LTO_CLANG y
-scripts/config --set-val CONFIG_LTO_CLANG 3
-#1: none; 2: full; 3: thin
+scripts/config --set-val CONFIG_LTO_CLANG_THIN y
 
 # Configure for LLVM tools
 scripts/config --set-str SYSTEM_TRUSTED_KEYS ""
@@ -19,6 +17,7 @@ scripts/config --set-val CONFIG_LD_IS_BFD n
 #
 scripts/config --set-val CONFIG_GENERIC_CPU n
 scripts/config --set-val CONFIG_MNATIVE_INTEL y
+scripts/config --set-val CONFIG_X86_NATIVE_CPU y
 
 #
 scripts/config --set-val CONFIG_DEBUG_INFO n
@@ -48,8 +47,9 @@ scripts/config --set-val CONFIG_MODULE_COMPRESS y
 scripts/config --set-val CONFIG_MODULE_COMPRESS_LZ4 y
 
 # Enable 32-bit Library Support
-scripts/config --set-val CONFIG_IA32_EMULATION n
 scripts/config --set-val CONFIG_X86_X32_ABI y
+scripts/config --set-val CONFIG_IA32_EMULATION y
+scripts/config --set-val CONFIG_IA32_EMULATION_DEFAULT_DISABLED n
 scripts/config --set-val CONFIG_COMPAT y
 scripts/config --set-val CONFIG_COMPAT_32BIT_TIME y
 
